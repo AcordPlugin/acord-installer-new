@@ -136,9 +136,15 @@ createApp({
     async mounted() {
 
         let possibleNames = ["Discord", "DiscordPTB", "DiscordCanary", "DiscordDevelopment"];
-        
+        let macNames = {
+            Discord: "Discord",
+            DiscordPTB: "Discord PTB",
+            DiscordCanary: "Discord Canary",
+            DiscordDevelopment: "Discord Development"
+        }
+
         possibleNames.forEach((i)=>{
-            let p = PLATFORM == "darwin" ? path.join(`/Applications/${i}.app/`) : path.join(LOCALAPPDATA, i);
+            let p = PLATFORM == "darwin" ? path.join(`/Applications/${macNames[i]}.app/`) : path.join(LOCALAPPDATA, i);
             if (fs.existsSync(p)) {
                 this.allowedClientPaths[i] = p;
             }
