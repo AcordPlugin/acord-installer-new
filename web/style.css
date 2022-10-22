@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#app {
+  border-radius: 18px;
+  background-color: var(--background-color);
+  contain: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 350px;
+  height: 450px;
+  -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+}
+
+#app > .titlebar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-top: 20px;
+  padding-right: 20px;
+  height: 32px;
+  -webkit-app-region: drag;
+}
+
+#app > .titlebar > .quit {
+  background-color: red;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 8px red;
+          box-shadow: 0px 0px 8px red;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+#app > .titlebar > .doAgain {
+  background-color: lime;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 8px lime;
+          box-shadow: 0px 0px 8px lime;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  margin-right: 8px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#app > .titlebar > .doAgain.visible {
+  pointer-events: all;
+  opacity: 0.95;
+}
+
+#app section {
+  width: 100%;
+  height: calc(450px - 32px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#app section.section-welcome {
+  color: white;
+}
+
+#app section.section-welcome .logo {
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+#app section.section-welcome .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#app section.section-welcome .description {
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+
+#app section.section-welcome .button {
+  padding: 12px 48px;
+  background-color: white;
+  color: black;
+  font-weight: 900;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#app section.section-clients {
+  color: black;
+}
+
+#app section.section-clients .title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#app section.section-clients .subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+#app section.section-clients .clients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4px;
+  margin-bottom: 48px;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+#app section.section-clients .clients .client {
+  color: var(--color);
+  border: 2px solid var(--color);
+  padding: 8px 16px;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#app section.section-clients .clients .client:hover, #app section.section-clients .clients .client.selected {
+  color: white;
+  background-color: var(--color);
+}
+
+#app section.section-clients .clients .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+
+#app section.section-clients .button {
+  padding: 12px 48px;
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+#app section.section-done {
+  color: white;
+}
+
+#app section.section-done .icon {
+  height: 128px;
+  margin-bottom: 24px;
+}
+
+#app section.section-done .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#app section.section-done .description {
+  text-align: center;
+  font-weight: 200;
+  margin-bottom: 96px;
+}
+
+#app section.section-done .link {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#app section.section-done .link:hover {
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+/*# sourceMappingURL=style.css.map */

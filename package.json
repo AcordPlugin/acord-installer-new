@@ -1,0 +1,46 @@
+{
+  "devDependencies": {
+    "electron": "^21.2.0"
+  },
+  "dependencies": {
+    "ps-node": "^0.1.6",
+    "terminate": "^2.2.2"
+  },
+  "author": "Kıraç Armağan Önal",
+  "description": "Acord Installer",
+  "version": "0.1.0",
+  "name": "acord-installer",
+  "displayName": "Acord Installer",
+  "scripts": {
+    "build:win": "electron-builder build --win portable",
+    "build:mac": "electron-builder build --mac portable"
+  },
+  "build": {
+    "appId": "rest.armagan.acord.installer",
+    "productName": "Acord Installer",
+    "copyright": "Copyright © 2022-2023 Acord Installer",
+    "icon": "icon.png",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "acord.ico",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    },
+    "win": {
+      "publisherName": "Kıraç Armağan Önal",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "acord.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
