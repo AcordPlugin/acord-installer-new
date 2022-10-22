@@ -13,7 +13,7 @@
   "displayName": "Acord Installer",
   "scripts": {
     "build:win": "electron-builder build --win portable",
-    "build:mac": "electron-builder build --mac portable"
+    "build:mac": "electron-builder build --mac"
   },
   "build": {
     "appId": "rest.armagan.acord.installer",
