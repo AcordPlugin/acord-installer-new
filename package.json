@@ -24,7 +24,7 @@
       "category": "public.app-category.utilities",
       "icon": "acord.png",
       "target": [
-        "pkg"
+        "zip"
       ]
     },
     "win": {
